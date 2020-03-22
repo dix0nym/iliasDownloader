@@ -11,12 +11,13 @@
 
 ## Configuration
 
+example configuration for HS-Albsig
 ```json
 {
     "path": "OUTPUT",
     "username": "USERNAME",
     "password": "SECRETPASSWORD",
     "client_id": "HS-ALBSIG",
-    "server": "https://SERVER/webservice/soap/server.php?wsdl"
+    "server": "https://elearning.hs-albsig.de/webservice/soap/server.php?wsdl"
 }
 ```
