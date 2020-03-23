@@ -1,0 +1,270 @@
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: urn:ilUserAdministration
+     ns1: http://schemas.xmlsoap.org/soap/encoding/
+
+Global elements:
+     ns1:Array(ns1:Array)
+     ns1:ENTITIES(ns1:ENTITIES)
+     ns1:ENTITY(ns1:ENTITY)
+     ns1:ID(ns1:ID)
+     ns1:IDREF(ns1:IDREF)
+     ns1:IDREFS(ns1:IDREFS)
+     ns1:NCName(ns1:NCName)
+     ns1:NMTOKEN(ns1:NMTOKEN)
+     ns1:NMTOKENS(ns1:NMTOKENS)
+     ns1:NOTATION(ns1:NOTATION)
+     ns1:Name(ns1:Name)
+     ns1:QName(ns1:QName)
+     ns1:Struct(ns1:Struct)
+     ns1:anyType(xsd:anyType)
+     ns1:anyURI(ns1:anyURI)
+     ns1:base64Binary(ns1:base64Binary)
+     ns1:boolean(ns1:boolean)
+     ns1:byte(ns1:byte)
+     ns1:date(ns1:date)
+     ns1:dateTime(ns1:dateTime)
+     ns1:decimal(ns1:decimal)
+     ns1:double(ns1:double)
+     ns1:duration(ns1:duration)
+     ns1:float(ns1:float)
+     ns1:gDay(ns1:gDay)
+     ns1:gMonth(ns1:gMonth)
+     ns1:gMonthDay(ns1:gMonthDay)
+     ns1:gYear(ns1:gYear)
+     ns1:gYearMonth(ns1:gYearMonth)
+     ns1:hexBinary(ns1:hexBinary)
+     ns1:int(ns1:int)
+     ns1:integer(ns1:integer)
+     ns1:language(ns1:language)
+     ns1:long(ns1:long)
+     ns1:negativeInteger(ns1:negativeInteger)
+     ns1:nonNegativeInteger(ns1:nonNegativeInteger)
+     ns1:nonPositiveInteger(ns1:nonPositiveInteger)
+     ns1:normalizedString(ns1:normalizedString)
+     ns1:positiveInteger(ns1:positiveInteger)
+     ns1:short(ns1:short)
+     ns1:string(ns1:string)
+     ns1:time(ns1:time)
+     ns1:token(ns1:token)
+     ns1:unsignedByte(ns1:unsignedByte)
+     ns1:unsignedInt(ns1:unsignedInt)
+     ns1:unsignedLong(ns1:unsignedLong)
+     ns1:unsignedShort(ns1:unsignedShort)
+     
+
+Global types:
+     xsd:anyType
+     ns1:Array(_value_1: ANY[], arrayType: xsd:string, offset: ns1:arrayCoordinate, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:ENTITIES(xsd:ENTITIES, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:ENTITY(xsd:ENTITY, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:ID(xsd:ID, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:IDREF(xsd:IDREF, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:IDREFS(xsd:IDREFS, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:NCName(xsd:NCName, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:NMTOKEN(xsd:NMTOKEN, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:NMTOKENS(xsd:NMTOKENS, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:NOTATION(xsd:QName, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:Name(xsd:Name, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:QName(xsd:QName, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:Struct(_value_1: ANY[], id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:anyURI(xsd:anyURI, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:arrayCoordinate
+     ns1:base64
+     ns1:base64Binary(xsd:base64Binary, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:boolean(xsd:boolean, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:byte(xsd:byte, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:date(xsd:date, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:dateTime(xsd:dateTime, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:decimal(xsd:decimal, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:double(xsd:double, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:duration(xsd:duration, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:float(xsd:float, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:gDay(xsd:gDay, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:gMonth(xsd:gMonth, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:gMonthDay(xsd:gMonthDay, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:gYear(xsd:gYear, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:gYearMonth(xsd:gYearMonth, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:hexBinary(xsd:hexBinary, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:int(xsd:int, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:integer(xsd:integer, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:language(xsd:language, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:long(xsd:long, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:negativeInteger(xsd:negativeInteger, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:nonNegativeInteger(xsd:nonNegativeInteger, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:nonPositiveInteger(xsd:nonPositiveInteger, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:normalizedString(xsd:normalizedString, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:positiveInteger(xsd:positiveInteger, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:short(xsd:short, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:string(xsd:string, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:time(xsd:time, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:token(xsd:token, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:unsignedByte(xsd:unsignedByte, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:unsignedInt(xsd:unsignedInt, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:unsignedLong(xsd:unsignedLong, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns1:unsignedShort(xsd:unsignedShort, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+     ns0:doubleArray(_value_1: double[], arrayType: xsd:string, offset: ns1:arrayCoordinate, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns0:ilOperation(ops_id: xsd:int, operation: xsd:string, description: xsd:string)
+     ns0:ilOperationIds(_value_1: int[], arrayType: xsd:string, offset: ns1:arrayCoordinate, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns0:ilOperations(_value_1: ilOperation[], arrayType: xsd:string, offset: ns1:arrayCoordinate, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns0:ilUserData(usr_id: xsd:int, login: xsd:string, passwd: xsd:string, firstname: xsd:string, lastname: xsd:string, title: xsd:string, gender: xsd:string, email: xsd:string, second_email: xsd:string, institution: xsd:string, street: xsd:string, city: xsd:string, zipcode: xsd:string, country: xsd:string, phone_office: xsd:string, last_login: xsd:string, last_update: xsd:string, create_date: xsd:string, hobby: xsd:string, department: xsd:string, phone_home: xsd:string, phone_mobile: xsd:string, fax: xsd:string, time_limit_owner: xsd:int, time_limit_unlimited: xsd:int, time_limit_from: xsd:int, time_limit_until: xsd:int, time_limit_message: xsd:int, referral_comment: xsd:string, matriculation: xsd:string, active: xsd:int, accepted_agreement: xsd:boolean, approve_date: xsd:string, user_skin: xsd:string, user_style: xsd:string, user_language: xsd:string, import_id: xsd:string)
+     ns0:intArray(_value_1: int[], arrayType: xsd:string, offset: ns1:arrayCoordinate, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+     ns0:stringArray(_value_1: string[], arrayType: xsd:string, offset: ns1:arrayCoordinate, id: xsd:ID, href: xsd:anyURI, _attr_1: {})
+
+Bindings:
+     Soap11Binding: {urn:ilUserAdministration}ILIASSoapWebserviceBinding
+
+Service: ILIASSoapWebservice
+     Port: ILIASSoapWebservicePort (Soap11Binding: {urn:ilUserAdministration}ILIASSoapWebserviceBinding)
+         Operations:
+            addCourse(sid: xsd:string, target_id: xsd:int, crs_xml: xsd:string) -> course_id: xsd:int
+            addDesktopItems(sid: xsd:string, user_id: xsd:int, reference_ids: ns0:intArray) -> num_added: xsd:int
+            addExercise(sid: xsd:string, target_id: xsd:int, xml: xsd:string) -> refid: xsd:int
+            addFile(sid: xsd:string, target_id: xsd:int, xml: xsd:string) -> refid: xsd:int
+            addGroup(sid: xsd:string, target_id: xsd:int, group_xml: xsd:string) -> ref_id: xsd:int
+            addObject(sid: xsd:string, target_id: xsd:int, object_xml: xsd:string) -> ref_id: xsd:int
+            addReference(sid: xsd:string, source_id: xsd:int, target_id: xsd:int) -> ref_id: xsd:int
+            addRole(sid: xsd:string, target_id: xsd:int, obj_xml: xsd:string) -> role_ids: ns0:intArray
+            addRoleFromTemplate(sid: xsd:string, target_id: xsd:int, obj_xml: xsd:string, role_template_id: xsd:int) -> role_ids: ns0:intArray
+            addUserRoleEntry(sid: xsd:string, user_id: xsd:int, role_id: xsd:int) -> success: xsd:boolean
+            assignCourseMember(sid: xsd:string, course_id: xsd:int, user_id: xsd:int, type: xsd:string) -> success: xsd:boolean
+            assignGroupMember(sid: xsd:string, group_id: xsd:int, user_id: xsd:int, type: xsd:string) -> success: xsd:boolean
+            checkSkillUserCertificateForTriggerRefId(sid: xsd:string, user_id: xsd:string, ref_id: xsd:string) -> have_certificates: xsd:string
+            copyObject(sid: xsd:string, xml: xsd:string) -> xml: xsd:int
+            createWebLink(sid: xsd:string, target_id: xsd:int, xml: xsd:string) -> refid: xsd:int
+            deleteCourse(sid: xsd:string, course_id: xsd:int) -> success: xsd:boolean
+            deleteExpiredDualOptInUserObjects(sid: xsd:string, usr_id: xsd:int) -> status: xsd:boolean
+            deleteObject(sid: xsd:string, reference_id: xsd:int) -> success: xsd:boolean
+            deleteProgress(sid: xsd:string, ref_ids: ns0:intArray, usr_ids: ns0:intArray, type_filter: ns0:stringArray, progress_filter: ns0:intArray) -> status: xsd:boolean
+            deleteRole(sid: xsd:string, role_id: xsd:int) -> success: xsd:boolean
+            deleteUser(sid: xsd:string, user_id: xsd:int) -> success: xsd:boolean
+            deleteUserRoleEntry(sid: xsd:string, user_id: xsd:int, role_id: xsd:int) -> success: xsd:boolean
+            distributeMails(sid: xsd:string, mail_xml: xsd:string) -> status: xsd:boolean
+            excludeCourseMember(sid: xsd:string, course_id: xsd:int, user_id: xsd:int) -> success: xsd:boolean
+            excludeGroupMember(sid: xsd:string, group_id: xsd:int, user_id: xsd:int) -> success: xsd:boolean
+            exportDataCollectionContent(sid: xsd:string, ref_id: xsd:int, table_id: xsd:int, format: xsd:string, filepath: xsd:string) -> export_path: xsd:string
+            getClientInfoXML(clientid: xsd:string) -> xml: xsd:string
+            getCourseXML(sid: xsd:string, course_id: xsd:int) -> xml: xsd:string
+            getCoursesForUser(sid: xsd:string, parameters: xsd:string) -> xml: xsd:string
+            getExerciseXML(sid: xsd:string, ref_id: xsd:int, attachment_mode: xsd:int) -> exercisexml: xsd:string
+            getFileXML(sid: xsd:string, ref_id: xsd:int, attachment_mode: xsd:int) -> filexml: xsd:string
+            getGroup(sid: xsd:string, ref_id: xsd:int) -> group_xml: xsd:string
+            getGroupsForUser(sid: xsd:string, parameters: xsd:string) -> xml: xsd:string
+            getIMSManifestXML(sid: xsd:string, ref_id: xsd:int) -> xml: xsd:string
+            getInstallationInfoXML() -> xml: xsd:string
+            getLearningProgressChanges(sid: xsd:string, timestamp: xsd:string, include_ref_ids: xsd:boolean, type_filter: ns0:stringArray) -> lp_data: xsd:string
+            getLocalRoles(sid: xsd:string, ref_id: xsd:int) -> role_xml: xsd:string
+            getNIC(sid: xsd:string) -> xmlresultset: xsd:string
+            getNrOfQuestionsInPass(sid: xsd:string, active_id: xsd:long, pass: xsd:int) -> count: xsd:int
+            getObjIdByImportId(sid: xsd:string, import_id: xsd:string) -> obj_id: xsd:int
+            getObjIdsByRefIds(sid: xsd:string, ref_ids: ns0:intArray) -> obj_ids: ns0:intArray
+            getObjectByReference(sid: xsd:string, reference_id: xsd:int, user_id: xsd:int) -> object_xml: xsd:string
+            getObjectTreeOperations(sid: xsd:string, ref_id: xsd:int, user_id: xsd:int) -> operations: ns0:ilOperations
+            getObjectsByTitle(sid: xsd:string, title: xsd:string, user_id: xsd:int) -> object_xml: xsd:string
+            getOperations(sid: xsd:string) -> operations: ns0:ilOperations
+            getPathForRefId(sid: xsd:string, ref_id: xsd:int) -> xml: xsd:string
+            getPositionOfQuestion(sid: xsd:string, active_id: xsd:long, question_id: xsd:int, pass: xsd:int) -> position: xsd:int
+            getPreviousReachedPoints(sid: xsd:string, active_id: xsd:long, question_id: xsd:int, pass: xsd:int) -> position: ns0:doubleArray
+            getProgressInfo(sid: xsd:string, ref_id: xsd:int, progress_filter: ns0:intArray) -> user_results: xsd:string
+            getQuestionSolution(sid: xsd:string, active_id: xsd:long, question_id: xsd:int, pass: xsd:int) -> solution: ns0:stringArray
+            getRefIdsByImportId(sid: xsd:string, import_id: xsd:string) -> ref_ids: ns0:intArray
+            getRefIdsByObjId(sid: xsd:string, obj_id: xsd:string) -> ref_ids: ns0:intArray
+            getRoles(sid: xsd:string, role_type: xsd:string, id: xsd:string) -> role_xml: xsd:string
+            getSCORMCompletionStatus(sid: xsd:string, usr_id: xsd:int, ref_id: xsd:int) -> status: xsd:string
+            getSkillCompletionDateForTriggerRefId(sid: xsd:string, user_id: xsd:string, ref_id: xsd:string) -> dates: xsd:string
+            getSkillTriggerOfAllCertificates(sid: xsd:string, user_id: xsd:string) -> certificate_triggers: xsd:string
+            getStructureObjects(sid: xsd:string, ref_id: xsd:int) -> xml: xsd:string
+            getTestResults(sid: xsd:string, ref_id: xsd:int, sum_only: xsd:boolean) -> xml: xsd:string
+            getTestUserData(sid: xsd:string, active_id: xsd:long) -> userdata: ns0:stringArray
+            getTreeChilds(sid: xsd:string, ref_id: xsd:int, types: ns0:stringArray, user_id: xsd:int) -> object_xml: xsd:string
+            getUser(sid: xsd:string, user_id: xsd:int) -> user_data: ns0:ilUserData
+            getUserIdBySid(sid: xsd:string) -> usr_id: xsd:int
+            getUserRoles(sid: xsd:string, user_id: xsd:int) -> role_xml: xsd:string
+            getUserXML(sid: xsd:string, user_ids: ns0:intArray, attach_roles: xsd:int) -> xml: xsd:string
+            getUsersForContainer(sid: xsd:string, ref_id: xsd:int, attach_roles: xsd:int, active: xsd:int) -> user_xml: xsd:string
+            getUsersForRole(sid: xsd:string, role_id: xsd:int, attach_roles: xsd:int, active: xsd:int) -> user_xml: xsd:string
+            getXMLTree(sid: xsd:string, ref_id: xsd:int, types: ns0:stringArray, user_id: xsd:int) -> object_xml: xsd:string
+            grantPermissions(sid: xsd:string, ref_id: xsd:int, role_id: xsd:int, operations: ns0:intArray) -> success: xsd:boolean
+            groupExists(sid: xsd:string, title: xsd:string) -> exists: xsd:boolean
+            handleECSTasks(sid: xsd:string, server_id: xsd:int) -> success: xsd:boolean
+            hasNewMail(sid: xsd:string) -> status: xsd:boolean
+            hasSCORMCertificate(sid: xsd:string, ref_id: xsd:int, usr_id: xsd:int) -> success: xsd:boolean
+            ilClone(sid: xsd:string, copy_identifier: xsd:int) -> new_ref_id: xsd:int
+            ilCloneDependencies(sid: xsd:string, copy_identifier: xsd:int) -> success: xsd:boolean
+            importUsers(sid: xsd:string, folder_id: xsd:int, usr_xml: xsd:string, conflict_rule: xsd:int, send_account_mail: xsd:int) -> protocol: xsd:string
+            isAssignedToCourse(sid: xsd:string, course_id: xsd:int, user_id: xsd:int) -> role: xsd:int
+            isAssignedToGroup(sid: xsd:string, group_id: xsd:int, user_id: xsd:int) -> role: xsd:int
+            login(client: xsd:string, username: xsd:string, password: xsd:string) -> sid: xsd:string
+            loginCAS(client: xsd:string, PT: xsd:string, user: xsd:string) -> sid: xsd:string
+            loginLDAP(client: xsd:string, username: xsd:string, password: xsd:string) -> sid: xsd:string
+            loginStudipUser(sid: xsd:string, user_id: xsd:int) -> sid: xsd:string
+            logout(sid: xsd:string) -> success: xsd:boolean
+            lookupUser(sid: xsd:string, user_name: xsd:string) -> usr_id: xsd:int
+            moveObject(sid: xsd:string, ref_id: xsd:int, target_id: xsd:int) -> result: xsd:boolean
+            processBackgroundTask(sid: xsd:string, task_id: xsd:int) -> status: xsd:boolean
+            readWebLink(sid: xsd:string, ref_id: xsd:int) -> weblinkxml: xsd:string
+            removeDesktopItems(sid: xsd:string, user_id: xsd:int, reference_ids: ns0:intArray) -> num_added: xsd:int
+            removeFromSystemByImportId(sid: xsd:string, import_id: xsd:string) -> success: xsd:boolean
+            removeTestResults(sid: xsd:string, ref_id: xsd:int, user_ids: ns0:intArray) -> success: xsd:boolean
+            revokePermissions(sid: xsd:string, ref_id: xsd:int, role_id: xsd:int) -> success: xsd:boolean
+            saveQuestion(sid: xsd:string, active_id: xsd:long, question_id: xsd:long, pass: xsd:int, solution: ns0:stringArray) -> status: xsd:boolean
+            saveQuestionResult(sid: xsd:string, user_id: xsd:int, test_id: xsd:int, question_id: xsd:int, pass: xsd:int, solution: ns0:stringArray) -> status: xsd:boolean
+            saveQuestionSolution(sid: xsd:string, active_id: xsd:long, question_id: xsd:long, pass: xsd:int, solution: xsd:string) -> status: xsd:string
+            searchObjects(sid: xsd:string, types: ns0:stringArray, key: xsd:string, combination: xsd:string, user_id: xsd:int) -> object_xml: xsd:string
+            searchRoles(sid: xsd:string, key: xsd:string, combination: xsd:string, role_type: xsd:string) -> xml: xsd:string
+            searchUser(sid: xsd:string, key_fields: ns0:stringArray, query_operator: xsd:string, key_values: ns0:stringArray, attach_roles: xsd:int, active: xsd:int) -> user_xml: xsd:string
+            sendMail(sid: xsd:string, rcp_to: xsd:string, rcp_cc: xsd:string, rcp_bcc: xsd:string, sender: xsd:string, subject: xsd:string, message: xsd:string, attachments: xsd:string) -> status: xsd:boolean
+            startBackgroundTaskWorker(sid: xsd:string) -> success: xsd:boolean
+            updateCourse(sid: xsd:string, course_id: xsd:int, xml: xsd:string) -> success: xsd:boolean
+            updateExercise(sid: xsd:string, ref_id: xsd:int, xml: xsd:string) -> success: xsd:boolean
+            updateFile(sid: xsd:string, ref_id: xsd:int, xml: xsd:string) -> success: xsd:boolean
+            updateGroup(sid: xsd:string, ref_id: xsd:int, xml: xsd:string) -> success: xsd:boolean
+            updateObjects(sid: xsd:string, object_xml: xsd:string) -> success: xsd:boolean
+            updateWebLink(sid: xsd:string, ref_id: xsd:int, xml: xsd:string) -> success: xsd:boolean
+
