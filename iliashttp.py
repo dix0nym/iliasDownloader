@@ -16,12 +16,12 @@ def parse_size(size):
     number, unit = [string.strip() for string in size.split()]
     return int(float(number)*units[unit])
 
-def sizeof_fmt(num, suffix='B'):
-    for unit in ['','K','M','G','T','P','E','Z']:
+def sizeof_fmt(num,):
+    for unit in units.keys():
         if abs(num) < 1024.0:
-            return "%3.1f%s%s" % (num, unit, suffix)
+            return "%3.1f%s" % (num, unit)
         num /= 1024.0
-    return "%.1f%s%s" % (num, 'Y', suffix)
+    return "%.1f%s" % (num, 'PB')
 
 class IliasClient():
 
@@ -82,8 +82,6 @@ class IliasClient():
                 print("\t\t- download of {} failed with {}".format(url, r.status_code))
                 return
             path = path.joinpath(fname)
-            size = sizeof_fmt(int(r.headers['content-length'])) if 'content-length' in r.headers else '?'
-            print("\t\t+ downloading {} ({})".format(fname, size))
             with path.open('wb+') as f:
                 for chunk in r.iter_content(chunk_size=8192):
                     f.write(chunk)
@@ -131,7 +129,7 @@ def main():
             if fpath.exists():
                 if props['size'] == -1:
                     print(
-                        "\t\t+ {} - exists, size unkown -> downloading tmpfile".format(props['name']))
+                        "\t\t+ {} - conflict, size=? ⟶ downloading as tmpfile (?B)".format(props['name']))
                     tmpfile = path.joinpath("tmpfile")
                     ic.download(f['url'], "tmpfile", path)
                     if tmpfile.stat().st_size == fpath.stat().st_size:
@@ -139,10 +137,10 @@ def main():
                     else:
                         tmpfile.replace(fpath)
                 elif props['size'] != fpath.stat().st_size:
-                    print("\t\t+ {} - outdated: ({}, {})".format(
-                        props['name'], props['size'], fpath.stat().st_size))
+                    print("\t\t+ {} - outdated ⟶ downloading ({})".format(props['name'], props['size']))
                     ic.download(f['url'], props['name'], path)
             else:
+                print("\t\t+ {} - new file ⟶ downloading ({})".format(props['name'], sizeof_fmt(props['size'])))
                 ic.download(f['url'], props['name'], path)
     print("[+] done")
     ic.logout()
