@@ -137,7 +137,7 @@ def main():
                     else:
                         tmpfile.replace(fpath)
                 elif props['size'] != fpath.stat().st_size:
-                    print("\t\t+ {} - outdated ⟶ downloading ({})".format(props['name'], props['size']))
+                    print("\t\t+ {} - outdated ⟶ downloading ({})".format(props['name'], sizeof_fmt(props['size'])))
                     ic.download(f['url'], props['name'], path)
             else:
                 print("\t\t+ {} - new file ⟶ downloading ({})".format(props['name'], sizeof_fmt(props['size'])))
