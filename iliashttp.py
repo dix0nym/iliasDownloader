@@ -10,6 +10,7 @@ units = {"B": 1, "KB": 2**10, "MB": 2**20, "GB": 2**30, "TB": 2**40}
 
 
 def parse_size(size):
+    print(size)
     size = size.upper().replace('BYTES', 'B').replace(".", '').replace(',', '.')
     if not re.match(r' ', size):
         size = re.sub(r'([KMGT]?B)', r' \1', size)
@@ -61,7 +62,9 @@ class IliasClient():
             if len(properties) >= 3:
                 ext = properties[0].text.strip()
                 size = properties[1].text.strip()
-                # print("FILE: '{}' - '{}' - '{}' - '{}'".format(title, refUrl, ext, size))
+                size = properties[2].text.strip() if size == "" and len(properties) == 4 and ext == "Dateiendung fehlt" else size
+                ext = "" if ext == "Dateiendung fehlt" else ext
+                print("{}PROPS".format(len(properties)), path, title, ext, size)
                 files.append({'name': title, 'ext': ext, 'size': parse_size(
                     size), 'url': refUrl, 'path': path})
             elif len(properties) == 0 and "cmd=view" in refUrl:
