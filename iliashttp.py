@@ -64,7 +64,7 @@ class IliasClient():
                 size = properties[1].text.strip()
                 size = properties[2].text.strip() if size == "" and len(properties) == 4 and ext == "Dateiendung fehlt" else size
                 ext = "" if ext == "Dateiendung fehlt" else ext
-                print("{}PROPS".format(len(properties)), path, title, ext, size)
+                # print("{}PROPS".format(len(properties)), path, title, ext, size)
                 files.append({'name': title, 'ext': ext, 'size': parse_size(
                     size), 'url': refUrl, 'path': path})
             elif len(properties) == 0 and "cmd=view" in refUrl:
