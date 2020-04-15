@@ -1,4 +1,5 @@
 import base64
+from termcolor import colored
 import json
 import zlib
 from pathlib import Path
@@ -21,7 +22,7 @@ def printlogo():
     print(r"  | || | | (_| \__ \ | |_| | (_) \ V  V /| | | | | (_) | (_| | (_| |  __/ |   ")
     print(r" |___|_|_|\__,_|___/ |____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|\___|_|   ")
     print("\n")
-                                                                       
+
 def getRoles(parser, roles):
     parsed = etree.fromstring(roles.encode('utf-8'), parser=parser)
     return [t.text.split("_")[-1] for t in parsed.findall('Object/Title') if "crs_member" in t.text]
@@ -57,26 +58,33 @@ def buildPath(cid, paths):
 
 def downloadFiles(client, sid, parser, output, files):
     count = 0
+    failcount = 0
+    new_files = 0
     for f in files:
         path = Path(output, f['path'], f['title'])
         if not path.exists() or path.stat().st_size != f['fileSize']:
             # does not exists
+            new_files += 1
             # ATTACH_MODE: NO = 0; ENCODED = 1; ZLIB_ENCODED = 2; GZIP_ENCODED = 3; COPY = 4;
             with client.settings(xml_huge_tree=True):
                 response = client.service.getFileXML(sid, f['id'], 2)
-        
+
             root = etree.fromstring(response.encode('utf-8'), parser=parser)
             latestVersion = root.find("Versions/Version[@version='{}']".format(f['version']))
             # filename = responseDict['File']['Filename']
-            data = latestVersion.text
-            decoded = base64.decodebytes(data.encode('utf-8'))
-            decompressed = zlib.decompress(decoded)
-            if not path.parent.exists():
-                path.parent.mkdir(parents=True, exist_ok=True)
-            with path.open('wb+') as f:
-                f.write(decompressed)
-            count += 1
-    return count
+            if latestVersion is not None and hasattr(latestVersion, 'text'):
+                assert latestVersion.get('text') == latestVersion.text
+                data = latestVersion.text
+                decoded = base64.decodebytes(data.encode('utf-8'))
+                decompressed = zlib.decompress(decoded)
+                if not path.parent.exists():
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                with path.open('wb+') as f:
+                    f.write(decompressed)
+                count += 1
+            else:
+                failcount += 1
+    return new_files, count, failcount
 
 
 def main():
@@ -100,8 +108,9 @@ def main():
     for role in roles:
         tree = client.service.getXMLTree(sid=sid, ref_id=role, types=xsd.SkipValue, user_id=user_id)
         k = parseCourse(parser, tree)
-        count = downloadFiles(client, sid, parser, output, k['files'])
-        print("\t* {}: {} new files".format(k['title'], count))
+        new_files, count, failcount = downloadFiles(client, sid, parser, output, k['files'])
+        formatted_counts = "{}/{}/{}".format(colored(count, 'green'), colored(failcount, 'red'), new_files))
+        print("\t* {}: {}".format(k['title'], formatted_counts if new_files else "no new files"))
     print("[+] done")
     client.service.logout(sid)
     print("[+] logged out")
