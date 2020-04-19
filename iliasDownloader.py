@@ -73,7 +73,6 @@ def downloadFiles(client, sid, parser, output, files):
             latestVersion = root.find("Versions/Version[@version='{}']".format(f['version']))
             # filename = responseDict['File']['Filename']
             if latestVersion is not None and hasattr(latestVersion, 'text'):
-                assert latestVersion.get('text') == latestVersion.text
                 data = latestVersion.text
                 decoded = base64.decodebytes(data.encode('utf-8'))
                 decompressed = zlib.decompress(decoded)
@@ -109,7 +108,7 @@ def main():
         tree = client.service.getXMLTree(sid=sid, ref_id=role, types=xsd.SkipValue, user_id=user_id)
         k = parseCourse(parser, tree)
         new_files, count, failcount = downloadFiles(client, sid, parser, output, k['files'])
-        formatted_counts = "{}/{}/{}".format(colored(count, 'green'), colored(failcount, 'red'), new_files))
+        formatted_counts = "{}/{}/{}".format(colored(count, 'green'), colored(failcount, 'red'), new_files)
         print("\t* {}: {}".format(k['title'], formatted_counts if new_files else "no new files"))
     print("[+] done")
     client.service.logout(sid)
