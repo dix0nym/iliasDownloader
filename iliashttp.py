@@ -54,6 +54,8 @@ class IliasClient():
         for r in rows:
             titleElem = r.select_one(
                 'h4.il_ContainerItemTitle > a.il_ContainerItemTitle')
+            if not titleElem:
+                continue
             title = titleElem.text.rstrip()
             refUrl = titleElem["href"]
             properties = r.select(
