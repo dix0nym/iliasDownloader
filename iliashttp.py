@@ -10,7 +10,6 @@ units = {"B": 1, "KB": 2**10, "MB": 2**20, "GB": 2**30, "TB": 2**40}
 
 
 def parse_size(size):
-    print(size)
     size = size.upper().replace('BYTES', 'B').replace(".", '').replace(',', '.')
     if not re.match(r' ', size):
         size = re.sub(r'([KMGT]?B)', r' \1', size)
@@ -33,10 +32,11 @@ class IliasClient():
 
     def login(self, username, password):
         self.session.get(self.baseurl)
-        url = self.baseurl + "ilias.php?lang=de&client_id=HS-ALBSIG&cmd=post&cmdClass=ilstartupgui&cmdNode=z8&baseClass=ilStartUpGUI&rtoken="
+        url = self.baseurl + "ilias.php?lang=de&client_id=HS-ALBSIG&cmd=post&cmdClass=ilstartupgui&cmdNode=zb&baseClass=ilStartUpGUI&rtoken="
         payload = {'username': username, 'password': password,
                    'cmd[doStandardAuthentication]': 'Anmelden'}
-        r = self.session.post(url, data=payload)
+        header = {"origin": "https://elearning.hs-albsig.de", "referer": "https://elearning.hs-albsig.de/login.php?client_id=HS-ALBSIG&lang=de"}
+        r = self.session.post(url, data=payload, headers=header)
         return "logout.php" in r.text
 
     def getCourses(self):
