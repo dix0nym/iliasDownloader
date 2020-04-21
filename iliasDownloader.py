@@ -92,24 +92,27 @@ def main():
     config = loadConfig()
     client = Client(config.server)
     sid = client.service.loginLDAP(config.client_id, config.username, config.password)
-    print("[+] logged in as {} -> sid={}".format(config.username, sid))
+    print(f"[+] logged in as {config.username} -> sid={sid}")
     user_id = client.service.getUserIdBySid(sid=sid)
-    print("[+] user_id = {}".format(user_id))
+    print(f"[+] user_id = {user_id}")
     roles = getRoles(parser, client.service.getUserRoles(sid=sid, user_id=user_id))
     output = Path(config.path)
-    print("[+] output-path: {}".format(config.path))
+    print(f"[+] output-path: {config.path}")
 
     if not output.exists():
         output.mkdir(parents=True, exist_ok=True)
 
-    print("[+] found {} course".format(len(roles)))
+    print(f"[+] found {len(roles)} course")
 
     for role in roles:
-        tree = client.service.getXMLTree(sid=sid, ref_id=role, types=xsd.SkipValue, user_id=user_id)
-        k = parseCourse(parser, tree)
-        new_files, count, failcount = downloadFiles(client, sid, parser, output, k['files'])
-        formatted_counts = "{}/{}/{}".format(colored(count, 'green'), colored(failcount, 'red'), new_files)
-        print("\t* {}: {}".format(k['title'], formatted_counts if new_files else "no new files"))
+        try:
+            tree = client.service.getXMLTree(sid=sid, ref_id=role, types=xsd.SkipValue, user_id=user_id)
+            k = parseCourse(parser, tree)
+            new_files, count, failcount = downloadFiles(client, sid, parser, output, k['files'])
+            formatted_counts = f"{colored(count, 'green')}/{colored(failcount, 'red')}/{new_files}"
+            print(f"\t* {k['title']}: {formatted_counts if new_files else 'no new files'}")
+        except Exception as e:
+            print(f"\t* {k['title']}: failed to getXMLTree (invalid XML response)")
     print("[+] done")
     client.service.logout(sid)
     print("[+] logged out")

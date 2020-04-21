@@ -117,13 +117,13 @@ def main():
         'r'), object_hook=lambda d: Namespace(**d))
     print("[+] config loaded")
     output = Path(config.path)
-    print("[+] output-path: {}".format(config.path))
+    print(f"[+] output-path: {config.path}")
     ic = IliasClient("https://elearning.hs-albsig.de/",
                      config.username, config.password)
     courses = ic.getCourses()
-    print("[+] found {} courses".format(len(courses)))
+    print(f"[+] found {len(courses)} courses")
     for course in courses:
-        print("\t* {}".format(course['title']))
+        print(f"\t* {course['title']}")
         files = ic.getFilesCourse(course['title'], course['url'])
         for f in files:
             path = Path(output, f['path'])
@@ -133,8 +133,7 @@ def main():
             fpath = path.joinpath(props['name'])
             if fpath.exists():
                 if props['size'] == -1:
-                    print(
-                        "\t\t+ {} - conflict, size=? ⟶ downloading as tmpfile (?B)".format(props['name']))
+                    print(f"\t\t+ {props['name']} - conflict, size=? ⟶ downloading as tmpfile (?B)")
                     tmpfile = path.joinpath("tmpfile")
                     ic.download(f['url'], "tmpfile", path)
                     if tmpfile.stat().st_size == fpath.stat().st_size:
@@ -142,10 +141,10 @@ def main():
                     else:
                         tmpfile.replace(fpath)
                 elif props['size'] != fpath.stat().st_size:
-                    print("\t\t+ {} - outdated ⟶ downloading ({})".format(props['name'], sizeof_fmt(props['size'])))
+                    print(f"\t\t+ {props['name']} - outdated ⟶ downloading ({sizeof_fmt(props['size'])})")
                     ic.download(f['url'], props['name'], path)
             else:
-                print("\t\t+ {} - new file ⟶ downloading ({})".format(props['name'], sizeof_fmt(props['size'])))
+                print(f"\t\t+ {props['name']} - new file ⟶ downloading ({sizeof_fmt(props['size'])})")
                 ic.download(f['url'], props['name'], path)
     print("[+] done")
     ic.logout()
