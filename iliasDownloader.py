@@ -112,7 +112,7 @@ def main():
             formatted_counts = f"{colored(count, 'green')}/{colored(failcount, 'red')}/{new_files}"
             print(f"\t* {k['title']}: {formatted_counts if new_files else 'no new files'}")
         except Exception as e:
-            print(f"\t* {k['title']}: failed to getXMLTree (invalid XML response)")
+            print(f"\t* {role}: failed to getXMLTree (invalid XML response)")
     print("[+] done")
     client.service.logout(sid)
     print("[+] logged out")
