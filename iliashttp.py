@@ -28,15 +28,20 @@ class IliasClient():
     def __init__(self, baseurl, username, password):
         self.baseurl = baseurl
         self.session = requests.Session()
+        self.session.headers.update({'user-agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36"})
         self.loggedin = self.login(username, password)
 
     def login(self, username, password):
-        self.session.get(self.baseurl)
+        self.session.get(self.baseurl + "login.php?client_id=HS-ALBSIG&lang=de")
         url = self.baseurl + "ilias.php?lang=de&client_id=HS-ALBSIG&cmd=post&cmdClass=ilstartupgui&cmdNode=zb&baseClass=ilStartUpGUI&rtoken="
+        print(url)
         payload = {'username': username, 'password': password,
                    'cmd[doStandardAuthentication]': 'Anmelden'}
         header = {"origin": "https://elearning.hs-albsig.de", "referer": "https://elearning.hs-albsig.de/login.php?client_id=HS-ALBSIG&lang=de"}
         r = self.session.post(url, data=payload, headers=header)
+        r = self.session.get("https://elearning.hs-albsig.de/ilias.php?baseClass=ilPersonalDesktopGUI&cmd=jumpToSelectedItems")      
+        with open('tmp.html', 'w+', encoding='utf-8') as f:
+            f.write(r.text)
         return "logout.php" in r.text
 
     def getCourses(self):
@@ -121,6 +126,9 @@ def main():
     ic = IliasClient("https://elearning.hs-albsig.de/",
                      config.username, config.password)
     courses = ic.getCourses()
+    if not courses:
+        print("[+] found no courses => exit")
+        exit()
     print(f"[+] found {len(courses)} courses")
     for course in courses:
         print(f"\t* {course['title']}")
