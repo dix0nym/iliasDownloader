@@ -1,5 +1,5 @@
 lxml==4.9.1
 zeep==3.4.0
-requests==2.23.0
+requests==2.31.0
 beautifulsoup4==4.8.2
 termcolor==1.1.0
